@@ -6,7 +6,7 @@
   <li><%=list_command.price%></li>
   <li><%=list_command.image_url%></li>
   <li>
-    <a href="<%=cart_path(@cart.id,list_command.id)%>" data-method="delete">Enlever du panier</a>
+    <a href="<%=cart_path(list_command.id)%>" data-method="delete">Enlever du panier</a>
   </li>
 </ul>
 <%end%>

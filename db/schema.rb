@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_103226) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_carts_on_user_id", unique: true
+    t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -89,9 +89,5 @@ ActiveRecord::Schema.define(version: 2019_09_03_103226) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "users", "carts"
-
-
 end
