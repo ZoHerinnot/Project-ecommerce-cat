@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Item.destroy_all
+
+20.times do
+  Item.create(
+              title: Faker::Creature::Cat.name,
+              description: Faker::Quote.matz,
+              image_url: Faker::Avatar.image,
+              price: rand(10...500)
+  )
+end
