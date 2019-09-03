@@ -1,0 +1,10 @@
+<h1><%=@item.title%></h1>
+<ul>
+	<li> <%=@item.title%> </li>
+	<li> <%=@item.price%> €</li>
+	<% unless @item.image_url.nil? %>
+	      <li><%= image_tag @item.image_url, class: "rounded-circle" %></li>
+	<% end %>
+	<li> <%=@item.description%> €</li>
+	<li><a href="<%=root_path%>">Home</a></li>
+</ul>
