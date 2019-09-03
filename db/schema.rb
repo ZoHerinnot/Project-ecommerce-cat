@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 2019_09_03_063202) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "join_table_order_items", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_join_table_order_items_on_item_id"
+    t.index ["order_id"], name: "index_join_table_order_items_on_order_id"
+  end
+
   create_table "list_commands", force: :cascade do |t|
     t.bigint "item_id"
     t.bigint "cart_id"
@@ -36,6 +45,13 @@ ActiveRecord::Schema.define(version: 2019_09_03_063202) do
     t.datetime "updated_at", null: false
     t.index ["cart_id"], name: "index_list_commands_on_cart_id"
     t.index ["item_id"], name: "index_list_commands_on_item_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
