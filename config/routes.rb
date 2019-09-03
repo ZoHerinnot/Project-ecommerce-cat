@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :items, only: [:show]
+  resources :users, only: [:index]
 
   
 end
