@@ -1,26 +1,24 @@
 class CartsController < ApplicationController
 
   def create
-
+    if current_user.cart.items.include?(Item.find(params[:format])) == false
+       ListCommand.create( cart: current_user.cart, item: Item.find(params[:format]) )
+    end
   end
 
   def show
-    @cart = Cart.find_by(user_id:current_user.id)
     @price_total = 0
-    @list_commands = []
-    @cart.list_commands.each do |cart| #liste de tous les comma
-      @list_commands << Item.find(cart.item_id)
-      @price_total += Item.find(cart.item_id).price
+    @list_commands = current_user.cart.items
+    @list_commands.each do |list_command| #liste de tous les comma
+      @price_total += list_command.price
     end
   end
 
   def destroy
-    @list_command = ListCommand.find_by(item_id:params[:format],cart_id:params[:id])
+    @list_command = ListCommand.find_by(item_id:params[:id], cart_id: current_user.cart.id)
     @list_command.destroy
     redirect_to cart_path(params[:id])
   end
-
-
 
 end
 
