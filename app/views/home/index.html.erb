@@ -1,3 +1,24 @@
-<h1>#index</h1>
+
 
 <%= render 'modals.html.erb' %>
+
+<h1>Photo de chat-robot</h1>
+<div>		
+	<div class="container">
+  		<div class="row">
+			<% @items.each do |item| %>
+				<div class="card col-4">
+				<ul>
+					<li> <%=item.title%> </li>
+					<li> <%=item.price%> €</li>
+					<% unless item.image_url.nil? %>
+				          <li><a href="<%=item_path(item.id)%>" alt="cat_image" title="+ d'info"><%= image_tag item.image_url, class: "rounded-circle" %></a></li>
+				    <% end %>
+				</ul>
+			</div>
+			<%end%>
+		</div>
+	</div>
+</div>
+
+
