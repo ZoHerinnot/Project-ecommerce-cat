@@ -1,0 +1,16 @@
+<h1>Votre panier</h1>
+<%@list_commands.each do |list_command|%>
+<ul>
+  <li><%= image_tag list_command.image_url, class: "rounded-circle" %></li>
+  <li><%=list_command.title%></li>
+  <li><%=list_command.price%></li>
+  <li><%=list_command.image_url%></li>
+  <li>
+    <a href="<%=cart_path(@cart.id,list_command.id)%>" data-method="delete">Enlever du panier</a>
+  </li>
+</ul>
+<%end%>
+<div class="">
+    <strong>Prix total: <%=@price_total%> €</strong><br/>
+    <a href="#">Passer la commande</a>
+</div>
