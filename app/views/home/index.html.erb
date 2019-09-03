@@ -8,7 +8,7 @@
 					<li> <%=item.title%> </li>
 					<li> <%=item.price%> €</li>
 					<% unless item.image_url.nil? %>
-				          <li><%= image_tag item.image_url, class: "rounded-circle" %></li>
+				          <li><a href="<%=item_path(item.id)%>" alt="cat_image" title="+ d'info"><%= image_tag item.image_url, class: "rounded-circle" %></a></li>
 				    <% end %>
 				</ul>
 			</div>
