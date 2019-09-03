@@ -1,24 +1,18 @@
 
 
 <%= render 'modals.html.erb' %>
-
-<h1>Photo de chat-robot</h1>
-<div>		
-	<div class="container">
-  		<div class="row">
-			<% @items.each do |item| %>
-				<div class="card col-4">
-				<ul>
-					<li> <%=item.title%> </li>
-					<li> <%=item.price%> €</li>
-					<% unless item.image_url.nil? %>
-				          <li><a href="<%=item_path(item.id)%>" alt="cat_image" title="+ d'info"><%= image_tag item.image_url, class: "rounded-circle" %></a></li>
-				    <% end %>
-				</ul>
-			</div>
-			<%end%>
-		</div>
-	</div>
-</div>
-
-
+	<h1>Photo de chat-robot</h1>		
+		<div class="container-index">
+	  		<div class="row index-content">
+				<% @items.each do |item| %>
+				<div class="card card-style" style="width: 18rem;">
+					<%= image_tag item.image_url, class: "card-img-top" %>
+				  <div class="card-body card-body-show">
+				    <h5 class="card-title"><%=item.title%></h5>
+				    <p class="card-text"><%=item.price%> €</p>
+				    <a href="<%=item_path(item.id)%>" class="btn btn-primary boutton">View details</a>
+				  </div><!-- FIN CARD BODY -->
+				</div><!-- FIN CARD -->
+				<%end%>
+			</div><!-- FIN ROW INDEX CONTENT-->
+		</div><!-- FIN CONTAINER INDEX -->

@@ -1,10 +1,14 @@
-<h1><%=@item.title%></h1>
-<ul>
-	<li> <%=@item.title%> </li>
-	<li> <%=@item.price%> €</li>
-	<% unless @item.image_url.nil? %>
-	      <li><%= image_tag @item.image_url, class: "rounded-circle" %></li>
-	<% end %>
-	<li> <%=@item.description%> €</li>
-	<li><a href="<%=root_path%>">Home</a></li>
-</ul>
+<div class="container container-show">
+		<h1><%=@item.title%></h1>
+				<div class="card card-style" style="width: 24rem;">
+					<%= image_tag @item.image_url, class: "card-img-top" %>
+				  <div class="card-body card-body-show">
+				    <h5 class="card-title"><strong>Picture title :</strong> <%=@item.title%></h5>
+				    <p class="card-text"><strong>Picture price :</strong> <%=@item.price%> €</p>
+				    <p class="card-text"><strong>Picture description :</strong> <%=@item.description%></p>
+				    	<a href="#" class="btn btn-success boutton">click here to buy!</a>
+				  </div><!-- FIN CARD BODY -->
+				</div>
+</div>
+
+
