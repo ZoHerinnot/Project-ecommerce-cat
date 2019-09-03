@@ -1,6 +1,4 @@
 class Cart < ApplicationRecord
-  has_many :users
-
   has_many :list_commands
   has_many :items, through: :list_commands
 
