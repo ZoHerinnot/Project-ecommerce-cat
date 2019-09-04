@@ -34,7 +34,7 @@
       </li>
       <% if user_signed_in? %>
         <li class="nav-item">
-          <a class="nav-link" href="<%=cart_path(current_user.id)%>">Panier</a>
+          <a class="nav-link" href="<%=cart_path(current_user.id)%>">Panier <i class="fas fa-shopping-cart"></i></a>
         </li>
       <% end %>
       </ul>
