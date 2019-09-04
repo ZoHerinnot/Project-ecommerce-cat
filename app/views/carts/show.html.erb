@@ -1,7 +1,7 @@
 <h1>Votre panier</h1>
 <div class="">
     <strong>Prix total: <%=@price_total%> €</strong><br/>
-    <a href="#">Passer la commande</a>
+    <a href="<%=orders_path%>" data-method="create" class="btn btn-primary">Passer la commande</a>
 </div>
 <%@list_commands.each do |list_command|%>
 <ul>
