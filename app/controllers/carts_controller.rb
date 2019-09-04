@@ -9,8 +9,9 @@ class CartsController < ApplicationController
     if current_user.cart.items.include?(Item.find(params[:format])) == false
        ListCommand.create( cart: current_user.cart, item: Item.find(params[:format]) )
     end
-
+      
   end
+
 
   def show
     
