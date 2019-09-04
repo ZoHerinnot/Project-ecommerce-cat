@@ -1,12 +1,23 @@
 class CartsController < ApplicationController
 
   def create
+
+    if current_user.cart == nil
+      Cart.create(user_id: current_user.id)
+    end
+
     if current_user.cart.items.include?(Item.find(params[:format])) == false
        ListCommand.create( cart: current_user.cart, item: Item.find(params[:format]) )
     end
+
   end
 
   def show
+    
+    if current_user.cart == nil
+      Cart.create(user_id: current_user.id)
+    end
+
     @price_total = 0
     @list_commands = current_user.cart.items
     @list_commands.each do |list_command| #liste de tous les comma

@@ -15,7 +15,7 @@ Cart.destroy_all
  Item.create(
       title: Faker::Creature::Cat.name,
       description: Faker::Quote.matz,
-      image_url: Faker::Avatar.image,
+      image_url: Faker::Avatar.image(size: "200x200", format: "jpg", set: "set4", bgset: "bg1"),
       price: rand(10...500)
  )
  puts "#{rand(10)}"
