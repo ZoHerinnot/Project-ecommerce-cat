@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Commande</title>
+</head>
+<body>
+	<h1>Bonjour <%=@order.user.last_name%>vous avez effectuer cette commande</h1>
+	<%@order.user.orders.each do |order|%>
+		<%order.items.each do |item|%>
+			<ul>
+				<li><img src="<%=item.image_url%>"></li>
+			</ul>
+		<%end%>
+	<%end%>
+</body>
+</html>

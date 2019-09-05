@@ -1,4 +1,5 @@
 
+
 <!-- Modal -->
 <div class="modal fade" id="modalSgnUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -34,6 +35,7 @@
             <div class="actions">
               <%= f.submit "Sign up", class:"btn btn-lg btn-primary btn-block" %>
             </div>
+            <%= render "modal_sing_up" %>
           <% end %>
       </div>
       <div class="modal-footer">
@@ -78,6 +80,7 @@
             <div class="actions">
               <%= f.submit "Log in", class:"btn btn-lg btn-primary btn-block" %>
             </div>
+            <%= render "modal_log_in" %>
           <% end %>
       </div>
       <div class="modal-footer">
