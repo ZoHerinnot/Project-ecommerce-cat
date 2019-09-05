@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Catpicture</title>
+    <title>Sell Cat picture</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -21,216 +21,56 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark back">
-  <a class="navbar-brand" href="<%=root_path%>">Robocat</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <% if user_signed_in? %>
-        <li class="nav-item">
-          <a class="nav-link" href="<%=cart_path(current_user.id)%>">Panier <i class="fas fa-shopping-cart"></i></a>
-        </li>
-      <% end %>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="<%=root_path%>">Picture Cat</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+              <% if user_signed_in? %>
+                <li class="nav-item active">
+                  <a class="nav-link" href="<%=cart_path(current_user.id)%>">Panier<i class="fas fa-shopping-cart"></i></a>
+                </li>
+              <% end %>
 
-    <div class="dropdown">
-        <% unless user_signed_in? %>
-          <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        S'inscrire/Se connecter
-          </button>
-         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <span class="dropdown-item"><%= link_to "S'inscrire", new_user_registration_path, id: "signup" %></span>  
-          <span class="dropdown-item"><%= link_to "Se connecter", new_user_session_path, id: "login" %></span> 
-         </div> 
-            <% else %>
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Voir mon profil
-          </button>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <span class="dropdown-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></span>
-          <span class="dropdown-item"><a href="/users">Mon profil</a> </span>
+              <% unless user_signed_in? %>
+                  <li class="nav-item">
+                    <%= link_to "S'inscrire", new_user_registration_path, class: "nav-link" %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
+                  </li>
+              <% else %>
+                  <li class="nav-item">
+                    <a href="/users" class="nav-link">Mon profil</a>
+                  </li>
 
-        <% end %>
+                  <li class="nav-item">
+                    <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                  </li>
+              <% end %>
+          </ul>
+        </div>
+
       </div>
+    </nav>
+
+
+
+
+    <div class="container">
+      <%= yield %>
     </div>
 
-</nav>
-
-<div class="global-container">
-      
-  <%= yield %>
-  
-</div>
-
-    <!-- Footer -->
-<footer class="text-black navbar-dark back-footer">
-
-  <!-- Footer Links -->
-  <div class="container text-center text-md-left">
-
-    <!-- Grid row -->
-    <div class="row">
-
-      <!-- Grid column -->
-      <div class="col-md-4 mx-auto">
-
-        <!-- Content -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
-        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-          consectetur
-          adipisicing elit.</p>
-
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Sell Cat picture 2019</p>
       </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-2 mx-auto">
-
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-
-      </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-2 mx-auto">
-
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-
-      </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-2 mx-auto">
-
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-
-      </div>
-      <!-- Grid column -->
-
-    </div>
-    <!-- Grid row -->
-
-  </div>
-  <!-- Footer Links -->
- <!--
-  <hr>
-
-  
- 
-  <ul class="list-unstyled list-inline text-center py-2">
-    <li class="list-inline-item">
-      <h5 class="mb-1">Register for free</h5>
-    </li>
-    <li class="list-inline-item">
-      <a href="/users/sign_up" class="btn btn-success btn-rounded">Sign up!</a>
-    </li>
-  </ul>
-
-
-
-  <hr>
-    -->
-  <!-- Social buttons -->
-  <ul class="list-unstyled list-inline text-center">
-    <li class="list-inline-item list-cursor">
-      <a class="btn-floating btn-fb mx-1">
-        <i class="fab fa-facebook-f"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item list-cursor">
-      <a class="btn-floating btn-tw mx-1">
-        <i class="fab fa-twitter"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item list-cursor">
-      <a class="btn-floating btn-gplus mx-1">
-        <i class="fab fa-google-plus-g"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item list-cursor">
-      <a class="btn-floating btn-li mx-1">
-        <i class="fab fa-linkedin-in"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item list-cursor">
-      <a class="btn-floating btn-dribbble mx-1">
-        <i class="fab fa-dribbble"> </i>
-      </a>
-    </li>
-
-  </ul>
-  <!-- Social buttons -->
-<div class="alert alert-secondary btn-up">
-  <a href="#">Retour en haut de la page <i class="fas fa-arrow-alt-circle-up"></i></a>
-</div>
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2018 Copyright:
-    <a href="https://mdbootstrap.com/education/bootstrap/"> e-commerce.com</a>
-  </div>
-  <!-- Copyright -->
-
-</footer>
-<!-- Footer -->
+      <!-- /.container -->
+    </footer>
 
   </body>
 </html>

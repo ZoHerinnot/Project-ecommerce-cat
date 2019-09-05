@@ -15,37 +15,6 @@
  */
 
 
- /*body{
- 	background-image: linear-gradient(to bottom, #1CACF4, #84CCFC);
- }*/
- /*==================================================
- ===================================================*/
-.btn-up{
-		text-align: center;
-		padding: 0px;
-		width: 250px;
-		height: 35px;
-		line-height: 35px;
-		border: solid;
-		border-radius: 10px;
-		margin: 0 auto;
-}
-.btn-up a{
-			color: gray;
-		text-decoration: none;
-}
-
-.list-cursor{
-	cursor: pointer;
-}
-
-.back{
-	background: rgba(0, 0, 10, 0.3);
-}
-.back-footer{
-	background: rgba(0, 0, 10, 0.1);
-}
-
 /*===========================================================================
 									MODAL
 ============================================================================*/
@@ -82,7 +51,7 @@
 color: #aaa;
  float: right;
  font-size: 28px;
- font-weight: bold;	
+ font-weight: bold;
 }
 .close:hover,
 .close:focus {
@@ -97,45 +66,7 @@ color: #aaa;
  text-decoration: none;
  cursor: pointer;
 }
-/*===========================================================================
-									INDEX
-============================================================================*/
-.global-container{
-	padding: 0 0 15px 0;
-}
-.global-container h1{
-	text-align: center;
-	color: white;
-	font-weight: bold;
-	font-size: 50px;
-}
-.container-index{
-width: 1362px;
-margin: 0 auto;
-}
 
-.index-content{
-	width: 1246px;
-	margin: 0px auto;
-	max-width: 1246px;
-
-}
-.boutton{
-	display: none;
-}
-.card-style{
-	background: rgba(0, 0, 10, 0.3);
-	margin: 10px;
-	border: solid 1px #AEAEAE;
-	border-radius: 10px;
-}
-.card-style:hover {
-	box-shadow: 10px 10px 10px 10px;
-}
-.card-style:hover .boutton{
-	display: block;
-	width: 150px;
-}
 
 /*=================================================================================
 										SHOW ITEM
@@ -154,6 +85,4 @@ margin: 0 auto;
 .container-show .card-style{
 	margin: 0 auto;
 	}
-	/*=======================================================================================
 
-	========================================================================================*/
