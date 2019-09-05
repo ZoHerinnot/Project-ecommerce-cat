@@ -1,12 +1,14 @@
-
-<div class="container">
+<%if @list_commands.empty? %>
+	<h1>Votre panier est vide pour le moment.</h1>
+	<p>Vous pouvez le remplir en ajoutant les photos que vous voules achetez dans le panier !</p>
+<%else%>
 	<table class="table">
 	  <thead class="thead-dark">
 	    <tr>
 	     	<th scope="col">Pic</th>
 	    	<th scope="col">Title</th>
-	      <th scope="col">price</th>
-	      <th scope="col" class="remove">Remove</th>
+			<th scope="col">price</th>
+			<th scope="col" class="remove">Remove</th>
 	    </tr>
 	  </thead>
 	  <tbody>
@@ -22,6 +24,7 @@
 	</table>
 	<div class="footer-basket">
 		<strong>Prix total: <%=@price_total%> €</strong><br/><br>
+
 		        
 		<%= form_tag new_order_path, method:'get' do%>
 		<%= hidden_field_tag :prix, @price_total %>
@@ -29,3 +32,4 @@
 		<% end %>
 	</div>
 </div>
+

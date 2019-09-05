@@ -21,7 +21,9 @@
 
   <body>
 
+
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+
   <a class="navbar-brand" href="<%=root_path%>">Robocat</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -59,13 +61,11 @@
           </button>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <span class="dropdown-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></span>
-          <span class="dropdown-item"><a href="/users">Mon profil</a> </span>
+          <span class="dropdown-item"><a href="/users/<%=current_user.id%>">Mon profil</a> </span>
 
         <% end %>
       </div>
-    </div>
-
-</nav>
+    </nav>
 
 
 
