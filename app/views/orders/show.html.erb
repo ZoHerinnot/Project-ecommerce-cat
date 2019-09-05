@@ -1,6 +1,5 @@
-</div>
-<%@order.items.each do |list_command|%>
-<a href="#">confirmer la commande</a>
+
+<%@list_commands.each do |list_command|%>
 <ul>
   <li><%= image_tag list_command.image_url, class: "rounded-circle" %></li>
   <li><%=list_command.title%></li>

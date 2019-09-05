@@ -14,7 +14,8 @@ class OrdersController < ApplicationController
   end
 
   def show
-  	@order = Order.find_by(user_id:current_user.id)
+  	@order = current_user.orders.last
+    @list_commands = @order.items 
   end
 
  
