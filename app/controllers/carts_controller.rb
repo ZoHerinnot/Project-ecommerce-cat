@@ -1,17 +1,22 @@
 class CartsController < ApplicationController
 
   def create
+    if user_signed_in?
+      if current_user.cart == nil
+        Cart.create(user_id: current_user.id)
+      end
 
-    if current_user.cart == nil
-      Cart.create(user_id: current_user.id)
-    end
+      if current_user.cart.items.include?(Item.find(params[:format])) == false
+         ListCommand.create( cart: current_user.cart, item: Item.find(params[:format]) )
+      end
 
-    if current_user.cart.items.include?(Item.find(params[:format])) == false
-       ListCommand.create( cart: current_user.cart, item: Item.find(params[:format]) )
+      redirect_to cart_path(current_user.id)
+     else
+      redirect_to new_user_registration_path 
+    
+        
     end
-      
   end
-
 
   def show
     
