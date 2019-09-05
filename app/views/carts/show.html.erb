@@ -1,16 +1,27 @@
-<h1>Votre panier</h1>
-<div class="">
-    <strong>Prix total: <%=@price_total%> €</strong><br/>
-    <a href="#">Passer la commande</a>
-</div>
-<%@list_commands.each do |list_command|%>
-<ul>
-  <li><%= image_tag list_command.image_url, class: "rounded-circle" %></li>
-  <li><%=list_command.title%></li>
-  <li><%=list_command.price%> €</li>
-  <li>
-    <a href="<%=cart_path(list_command.id)%>" data-method="delete">Enlever du panier</a>
-  </li>
-</ul>
-<%end%>
 
+<div class="container">
+	<table class="table">
+	  <thead class="thead-dark">
+	    <tr>
+	     	<th scope="col">Pic</th>
+	    	<th scope="col">Title</th>
+	      <th scope="col">price</th>
+	      <th scope="col" class="remove">Remove</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	<%@list_commands.each do |list_command|%>
+	    <tr class="table-font">
+	    	<td><a href="/items/<%=list_command.id%>"><%= image_tag list_command.image_url, class: "pic" %></a></td>
+	      <td><%= list_command.title %></td>
+	      <td><%=list_command.price%> €</td>
+	      <td><a href="<%=cart_path(list_command.id)%>" data-method="delete" class="badge badge-danger">Enlever du panier</a></td>
+	    </tr>
+		<% end %>
+	  </tbody>
+	</table>
+	<div class="footer-basket">
+		<strong>Prix total: <%=@price_total%> €</strong><br/><br>
+   	<a href="#" data-method="create" class="btn btn-success">Passer la commande</a>
+	</div>
+</div>
