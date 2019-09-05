@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-
+	after_action :create_order, only:[:create]
 	def new
 		@payed = params[:prix]		
 	end
@@ -26,23 +26,31 @@ class OrdersController < ApplicationController
 	})
 	 
      rescue Stripe::CardError => e
-	flash[:error] = e.message
-	redirect_to new_charge_path
-	
-  	@order = Order.create(user_id: current_user.id)
-  	@items = current_user.cart.items
-  	@items.each do |item|
-  		JoinTableOrderItem.create(item_id:item.id, order_id:@order.id)
-  	end
+		flash[:error] = e.message
+		redirect_to new_charge_path
 
-  	@cart = current_user.cart.destroy
-    Cart.create(user_id: current_user.id) #crée une panier vide a nouveau
-  	redirect_to order_path(@order.id)
   end
 
   def show
   	@order = current_user.orders.last
     @list_commands = @order.items 
+  end
+
+
+  private
+  
+
+  def create_order
+  	@order = Order.create(user_id: current_user.id)
+  	@items = current_user.cart.items
+
+  	@items.each do |item|
+  		JoinTableOrderItem.create(item_id:item.id, order_id:@order.id)
+  	end
+
+  	@cart = current_user.cart.destroy
+
+    Cart.create(user_id: current_user.id) #crée une panier vide a nouveau
   end
 
 

@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 	
 	#table-container ,tbody{
-		color: darkRed;
+		color: #000000;
 	}
 
 	.pic{
@@ -31,7 +31,6 @@
 		color: #FFFFFF;
 	}
 
-
 	.outline{
 	cursor: pointer;
 	border: solid #FFFFFF 1px;
@@ -45,7 +44,7 @@
 	border-radius: 5px;
 }
 .outline-info:hover {
-	background: #222020;
+	background: #222020;	
 	}
 
 
