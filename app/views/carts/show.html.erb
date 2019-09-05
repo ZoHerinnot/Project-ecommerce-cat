@@ -24,6 +24,12 @@
 	</table>
 	<div class="footer-basket">
 		<strong>Prix total: <%=@price_total%> €</strong><br/><br>
-		<a href="<%=orders_path%>" data-method="create" class="btn btn-success">Passer la commande</a>
+
+		        
+		<%= form_tag new_order_path, method:'get' do%>
+		<%= hidden_field_tag :prix, @price_total %>
+		<%= submit_tag "Passer commande" %> <br/>
+		<% end %>
 	</div>
-<%end%>
+</div>
+

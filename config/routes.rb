@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :carts
 
-  resources :orders, only:[:create, :show]
+  resources :orders
 
 
 
