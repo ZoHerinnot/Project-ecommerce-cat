@@ -1,0 +1,12 @@
+<h1>Edit profil</h1>
+<div class="form-group">
+<%= form_for @user do |f| %>
+<label> First_name </label>
+    <%= f.text_field :first_name, class: "form-control" %> </br>
+<label> Last_name  </label>
+ <%= f.text_field :last_name, class: "form-control" %> </br>
+ <label> E-mail  </label>
+    <%= f.text_field :email, class: "form-control" %> </br>
+ <%= f.submit "Edit", class: "btn btn-primary" %>
+<% end %>
+</div>

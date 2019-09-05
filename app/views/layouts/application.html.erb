@@ -20,38 +20,48 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="<%=root_path%>">Robocat</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <% if user_signed_in? %>
-            <li class="nav-item">
-              <a class="nav-link" href="<%=cart_path(current_user.id)%>">Panier <i class="fas fa-shopping-cart"></i></a>
-            </li>
-          <% end %>
-        </ul>
-      <div class="dropdown">
-          <% unless user_signed_in? %>
-            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">S'inscrire/Se connecter</button>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <button type="button" class="btn btn-link" data-toggle="modal" data-target="#modalSgnUp">s'inscrire</button></br> 
-              <button type="button" class="btn btn-link" data-toggle="modal" data-target="#modalLogin">se connecter</button>
-           </div> 
-          <% else %>
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Voir mon profil
-              </button>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <span class="dropdown-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></span>
-                  <span class="dropdown-item"><a href="/users">Mon profil</a></span>
-              </div>
-          <% end %>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-transparant">
+  <a class="navbar-brand" href="<%=root_path%>">Robocat</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <a class="nav-link" href="<%=cart_path(current_user.id)%>">Panier <i class="fas fa-shopping-cart"></i></a>
+        </li>
+      <% end %>
+      </ul>
+
+    <div class="dropdown">
+        <% unless user_signed_in? %>
+          <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        S'inscrire/Se connecter
+          </button>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#modalSgnUp">
+            s'inscrire
+          </button></br> 
+          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#modalLogin">
+            se connecter
+          </button>
+         </div> 
+            <% else %>
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Voir mon profil
+          </button>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <span class="dropdown-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></span>
+          <span class="dropdown-item"><a href="/users/<%=current_user.id%>">Mon profil</a> </span>
+
+        <% end %>
       </div>
     </nav>
 

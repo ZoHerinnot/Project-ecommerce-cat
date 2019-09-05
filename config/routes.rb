@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :items, only: [:show] do
     resources :pictures, only: [:create]
   end
-  resources :users, only: [:index]
+  resources :users, only:[:index, :show, :edit, :update]
 
   resources :carts
 
