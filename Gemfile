@@ -71,4 +71,5 @@ gem 'table_print'
 gem 'faker'
 gem 'jquery-rails'
 gem 'devise'
-
+gem 'letter_opener'
+gem 'dotenv-rails'
