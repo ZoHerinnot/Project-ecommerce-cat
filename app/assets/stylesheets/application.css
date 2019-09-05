@@ -14,6 +14,14 @@
  *= require_self
  */
 
+.container-heigth{
+	min-height: 610px;
+  margin-top: 70px;
+}
+
+.display_basket{
+	float:left;
+}
 
 /*===========================================================================
 									MODAL

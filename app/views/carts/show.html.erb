@@ -1,28 +1,29 @@
-
+ss
 <div class="container">
-	<table class="table">
-	  <thead class="thead-dark">
-	    <tr>
-	     	<th scope="col">Pic</th>
-	    	<th scope="col">Title</th>
-	      <th scope="col">price</th>
-	      <th scope="col" class="remove">Remove</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	  	<%@list_commands.each do |list_command|%>
-	    <tr class="table-font">
-	    	<td><a href="/items/<%=list_command.id%>"><%= image_tag list_command.image_url, class: "pic" %></a></td>
-	      <td><%= list_command.title %></td>
-	      <td><%=list_command.price%> €</td>
-	      <td><a href="<%=cart_path(list_command.id)%>" data-method="delete" class="badge badge-danger">Enlever du panier</a></td>
-	    </tr>
-		<% end %>
-	  </tbody>
-	</table>
-	<div class="footer-basket">
-		<strong>Prix total: <%=@price_total%> €</strong><br/><br>
-		<a href="<%=orders_path%>" data-method="create" class="btn btn-success">Passer la commande</a>
-
+	<div id="table-container">
+		<table class="table">
+		  <thead class="thead-dark">
+		    <tr>
+		     	<th scope="col">Pic</th>
+		    	<th scope="col">Title</th>
+		      <th scope="col">price</th>
+		      <th scope="col" class="remove">Remove</th>
+		    </tr>
+		  </thead>
+			  <tbody>
+			  	<%@list_commands.each do |list_command|%>
+			    <tr class="table-font" id="pic<%=list_command.id%>">
+			    	<td><a href="/items/<%=list_command.id%>"><%= image_tag list_command.image_url, class: "pic" %></a></td>
+			      <td><%= list_command.title %></td>
+			      <td><%=list_command.price%> €</td>
+			      <td><a href="<%=cart_path(list_command.id)%>" data-method="delete" data-confirm="êtes vous sure ?" data-remote="true" class="badge badge-danger">Enlever du panier</a></td>
+			    </tr>
+				<% end %>
+			  </tbody>
+		</table>
+		<div class="footer-basket">
+			<strong>Prix total: <%=@price_total%> €</strong><br/><br>
+			<button class="outline outline-info"><a href="<%=orders_path%>" data-method="create">Passer la commande</a></button>
+		</div>
 	</div>
 </div>
