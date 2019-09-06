@@ -3,19 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.marginTop{
-  margin-top:90px;
-}
 
-#center-div{
-  margin: 0 auto;
-  width: 200pw;
-}
-
-.imag_pic{
-  width: 900px;
-  height: 350px;
-}
 body{
 	background: image-url("chatheureux.jpg");
 	background-repeat: no-repeat;
@@ -24,16 +12,11 @@ body{
 }
 
 .carousel-item {
-  height: 100px;
+  height: 150px;
   min-height: 350px;
   background: no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-
-.marke {
-	background-color: white;
-	height: 80px;
 }

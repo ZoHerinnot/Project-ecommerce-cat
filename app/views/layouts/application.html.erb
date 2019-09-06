@@ -20,7 +20,7 @@
   </head>
 
   <body>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark back bg-success sticky-top">
 
   <a class="navbar-brand" href="<%=root_path%>">Robocat</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,17 +67,21 @@
 
 
 
-    <div class="container container-heigth">
+    <div class="global-container">
       <%= render '/home/modals.html.erb' %>
       <%= yield %>
     </div>
 
-    <footer class="py-5 bg-dark">
+    <!-- <footer class="py-5 bg-dark sticky-top">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Sell Cat picture 2019</p>
       </div>
-      <!-- /.container -->
-    </footer>
+    </footer> -->
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="footer container text-center">
+      <small>Copyright &copy; Your Website</small>
+    </div>
+  </footer>
 
   </body>
 </html>
