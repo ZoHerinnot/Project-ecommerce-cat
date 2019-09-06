@@ -1,2 +1,14 @@
-console.log('<%=@list_command.item_id %>')
+console.log('dmlskjhdqgikhj qsùdgiohzd')
+
+
+
+
 document.getElementById('pic<%= @list_command.item_id%>').remove()
+document.getElementsByTagName('i')[0].textContent = "(<%= current_user.cart.items.count %>)"
+
+document.getElementById("prixDuCart").textContent = "Prix total: <%=@price_total%> €"
+
+
+/*
+<i class="fas fa-shopping-cart"> (<%= current_user.cart.items.count %>)</i>
+*/
