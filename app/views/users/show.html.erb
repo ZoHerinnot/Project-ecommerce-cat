@@ -20,9 +20,10 @@
     						<%= form_tag user_avatars_path(@user), multipart: true do %>
     						<%= file_field_tag :avatar %>
     						<%= submit_tag "valider"%>
-    						<% end %>
-        <a href="/users/<%=@user.id%>/edit" class="btn btn-success boutton">Edit</a>
-        <a href="/events" class="btn btn btn-primary">Back to home</a>
+    						<% end %><br>
+        <a href="/users/<%=@user.id%>/edit" class="btn btn-success boutton">Edit votre profil</a><br><br>
+        <a href="/users/edit" class="btn btn-success boutton">Modifier votre mot de passe</a><br><br>
+        <a href="/events" class="btn btn btn-primary">Back to home</a><br>
       </div>
     </div>
 
