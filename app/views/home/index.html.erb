@@ -9,8 +9,8 @@
    </ol>
    <div class="carousel-inner" role="listbox">
      <!-- Slide One - Set the background image for this slide in the line below -->
-     <div class="carousel-item active">     
-         <%= image_tag ("cat.jpg"),class:"d-block w-100" %> 
+     <div class="carousel-item active">
+         <%= image_tag ("cat.jpg"),class:"d-block w-100" %>
        <div class="carousel-caption d-none d-md-block">
          <h2 class="display-4">Bienvenue</h2>
          <p class="lead">Des chats supers mignons en photo</p>
@@ -18,7 +18,7 @@
      </div>
      <!-- Slide Two - Set the background image for this slide in the line below -->
      <div class="carousel-item">
-     	<%= image_tag ("cat2.jpg") ,class:"d-block w-100"%> 
+     	<%= image_tag ("cat2.jpg") ,class:"d-block w-100"%>
        <div class="carousel-caption d-none d-md-block">
          <h2 class="display-4">Inscrire</h2>
          <p class="lead">Inscrivez vous c'est gratuit</p>
@@ -26,7 +26,7 @@
      </div>
      <!-- Slide Three - Set the background image for this slide in the line below -->
      <div class="carousel-item">
-     	<%= image_tag ("cat3.jpg") ,class:"d-block w-100" %> 
+     	<%= image_tag ("cat3.jpg") ,class:"d-block w-100" %>
        <div class="carousel-caption d-none d-md-block">
          <h2 class="display-4">Commander</h2>
          <p class="lead">Remplissez votre panier et acheter</p>
@@ -62,12 +62,12 @@
 												</h4>
 												<h5><%=item.price%> $</h5>
 												<p class="card-text"><%=item.description[0..20]%> ...</p>
+                          <a href="<%=carts_path(item.id)%>" data-method="create" class="badge badge-primary">Ajouter au panier</a>
 											</div>
+
 									</div>
 							</div>
 					<%end%>
 			</div>
     </div>
   </div>
-
-
