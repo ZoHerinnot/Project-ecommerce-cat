@@ -21,8 +21,7 @@
 
   <body>
       <nav class="navbar navbar-expand-lg navbar-dark back bg-success sticky-top">
-
-  <a class="navbar-brand" href="<%=root_path%>">Robocat</a>
+  <a class="navbar-brand" href="<%=root_path%>">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -30,7 +29,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        
       </li>
      </ul>
 
@@ -67,14 +66,16 @@
 
 
 
+
     <div class="global-container">
       <%= render '/home/modals.html.erb' %>
       <%= yield %>
-    </div>
+ 
 
     <!-- <footer class="py-5 bg-dark sticky-top">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Sell Cat picture 2019</p>
+        
       </div>
     </footer> -->
     <footer id="sticky-footer" class="py-4 bg-dark text-white-50">

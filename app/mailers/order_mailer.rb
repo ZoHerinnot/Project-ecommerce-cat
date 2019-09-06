@@ -1,9 +1,9 @@
 class OrderMailer < ApplicationMailer
-	default from: 'no-reply@monsite.fr'
+	default from: 'https://robocat-little.herokuapp.com/'
 
 	def notify_email(order)
 		@order = order
-		@url = "http://monsite.fr/login"
+		@url = "https://robocat-little.herokuapp.com/"
 		mail(to: @order.user.email, subject: 'Commande effectuer !')
 	end
 end
