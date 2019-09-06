@@ -5,6 +5,10 @@ class UsersController < ApplicationController
 
 	def show
 		@user = current_user
+		@items = []
+		@user.orders.each do |order|
+			@items += order.items
+		end
 	end
 
 	def edit

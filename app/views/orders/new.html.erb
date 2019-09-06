@@ -6,7 +6,7 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Vous devrez payez :<%=@payed%> <strong>$</strong></span>
+      <span>Vous devrez payez :<%=@payed%> <strong>€</strong></span>
       <%= hidden_field_tag :price, @payed %>
     </label>
   </article>
@@ -14,6 +14,6 @@
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
-          data-amount="500"
+          data-amount="<%= @payed.to_f * 100%>"
           data-locale="auto"></script>
 <% end %>
