@@ -4,7 +4,7 @@
 
 
 .marginTop{
-  margin-top:90px;
+
 }
 
 #center-div{
@@ -17,7 +17,7 @@
   height: 350px;
 }
 body{
-	background: image-url("chatheureux.jpg");
+	background: image-url("cat1.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -36,4 +36,16 @@ body{
 .marke {
 	background-color: white;
 	height: 80px;
+}
+
+.navbar-color{
+  background: transparent;
+}
+.color-card{
+  color: white;
+
+}
+.edit-card{
+  opacity: 1.0;
+  border: 1px solid black;
 }
