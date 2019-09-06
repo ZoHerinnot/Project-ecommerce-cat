@@ -81,8 +81,8 @@ color: #aaa;
 ====================================================================================*/
 
 .container-show{
-	 border: 0 solid;
-	 border-radius: 10px;
+	border: 0 solid;
+	border-radius: 10px;
 }
 .container-show h1{
 	text-align: center;
@@ -94,3 +94,9 @@ color: #aaa;
 	margin: 0 auto;
 	}
 
+/*=================================================================================
+										SHOW INDEX
+====================================================================================*/
+.navbar-color{
+	background: transparent;
+}
