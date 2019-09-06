@@ -60,10 +60,9 @@
 												<h4 class="card-title">
 													<a href="<%=item_path(item.id)%>"><%=item.title%></a>
 												</h4>
-												<h5><%=item.price%> €</h5>
-												<p class="card-text " ><%=item.description[0..20]%> ...</p>
-                        <a href="<%=carts_path(item.id)%>" data-method="create" class="badge badge-primary">Ajouter au panier</a>
-											</div>										
+												<h5><%=item.price%> $</h5>
+												<p class="card-text"><%=item.description[0..20]%> ...</p>
+											</div>
 									</div>
 							</div>
 					<%end%>
