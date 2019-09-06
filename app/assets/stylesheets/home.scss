@@ -23,3 +23,17 @@ body{
 	background-attachment: fixed;
 }
 
+.carousel-item {
+  height: 100px;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.marke {
+	background-color: white;
+	height: 80px;
+}

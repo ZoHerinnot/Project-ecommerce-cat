@@ -1,7 +1,11 @@
 
 <%@list_commands.each do |list_command|%>
 <ul>
+	<%if list_command.picture.attached?%>
+  <li><%= image_tag list_command.picture, class: "rounded-circle" %></li>
+  <%else%>
   <li><%= image_tag list_command.image_url, class: "rounded-circle" %></li>
+  <%end%>
   <li><%=list_command.title%></li>
   <li><%=list_command.price%> €</li>
 </ul>
