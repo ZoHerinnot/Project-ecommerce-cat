@@ -11,18 +11,23 @@ ListCommand.destroy_all
 User.destroy_all
 Cart.destroy_all
 
+u = User.create(email:"google@gmail.com", password:"google@gmail.com").id
+u1 = User.create(email:"yahoo@gmail.com", password:"yahoo@gmail.com").id
+tab = [u1,u]
+
 20.times do
  Item.create(
       title: Faker::Creature::Cat.name,
       description: Faker::Quote.matz,
       image_url: Faker::Avatar.image(size: "200x200", format: "jpg", set: "set4", bgset: "bg1"),
+
       price: rand(5...15)
+
  )
  puts "#{rand(10)}"
 end
 
-u = User.create(email:"google@gmail.com", password:"google@gmail.com").id
-u1 = User.create(email:"yahoo@gmail.com", password:"yahoo@gmail.com").id
+
 
 c = Cart.create(user_id: u)
 c1 = Cart.create(user_id: u1)
@@ -30,6 +35,7 @@ c1 = Cart.create(user_id: u1)
 
 a = Item.first.id
 b = Item.last.id
+
 
 5.times do
     ListCommand.create( cart:c, item: Item.find(a) )
