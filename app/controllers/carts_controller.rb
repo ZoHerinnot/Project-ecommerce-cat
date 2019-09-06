@@ -25,6 +25,7 @@ class CartsController < ApplicationController
 
   def destroy
     @list_command = ListCommand.find_by(item_id:params[:id], cart_id: current_user.cart.id)
+    @list_command.destroy
     respond_to do |format|
       format.js {  }
       format.html{ redirect_to root_path }
