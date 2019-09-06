@@ -1,3 +1,23 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.container-user{
+	text-align: center;
+}
+.container-user ul{
+	list-style: none;
+	padding-left: 0px;
+}
+.avatar_pic{
+	width: 316px;
+	height: 316px;
+}
+.display_user{
+	display: inline-block;
+}
+#user{
+	float: left;
+	margin-top: 50px;
+}
