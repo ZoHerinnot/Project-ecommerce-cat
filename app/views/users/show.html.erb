@@ -1,8 +1,38 @@
-<h1> Mon profil </h1>
+<!-- <h1> Mon profil </h1>
 <ul>
 	<li>first_name : <%= @user.first_name%></li>
 	<li>last_name : <%= @user.last_name%></li>
 	<li>email : <%= @user.email%></li>
-</ul>
+</ul> -->
 
-<a href="/users/<%=@user.id%>/edit" class="btn btn-success boutton">click here to buy!</a>
+<body  style="text-align: center;">
+	<div class="card" style="width: 20rem;">
+  <div class="card" style="width: 100%;">
+  <h1>Page Profil</h1>
+<%if @user.avatar.attached?%>
+  <%= image_tag @user.avatar, alt: 'avatar' %>
+<%else%>
+  <%= image_tag ("profilVide.jpeg")%>
+<%end%>
+
+</div>
+
+  <div class="card-body">
+    <h5 class="card-title"><%=current_user.first_name%> <%=current_user.last_name%></h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="card-text"><%=current_user.email%> </li>
+  </ul>
+  <div class="card-body">
+  	<h6>Changer de profil ?</h6>
+						<%= form_tag user_avatars_path(@user), multipart: true do %>
+						<%= file_field_tag :avatar %>
+						<%= submit_tag "valider"%>
+						<% end %>
+    <a href="/users/<%=@user.id%>/edit" class="btn btn-success boutton">Edit</a>
+    <a href="/events" class="btn btn btn-primary">Back to home</a>
+  </div>
+</div>
+
+</body>
+
