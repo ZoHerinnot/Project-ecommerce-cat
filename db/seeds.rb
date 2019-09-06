@@ -21,7 +21,7 @@ Cart.destroy_all
  puts "#{rand(10)}"
 end
 
-u = User.create(email:"google@gmail.co1m", password:"google@gmail.com").id
+u = User.create(email:"google@gmail.com", password:"google@gmail.com").id
 u1 = User.create(email:"yahoo@gmail.com", password:"yahoo@gmail.com").id
 
 c = Cart.create(user_id: u)

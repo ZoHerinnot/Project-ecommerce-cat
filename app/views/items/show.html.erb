@@ -1,23 +1,32 @@
+
 <div class="container container-show">
 		<h1><%=@item.title%></h1>
 				<div class="card card-style" style="width: 24rem;">
+					
 				<%if @item.picture.attached?%>
 					<%=image_tag @item.picture, alt: 'picture' ,class: "card-img-top" %>
 				<%else%>
 					<%=image_tag @item.image_url, alt: 'picture', class: "card-img-top" %>
-				<%end%>					
+				<%end%>		
+					
+
 						<div class="card-body card-body-show">
 				    <h5 class="card-title"><strong>Picture title :</strong> <%=@item.title%></h5>
 				    <p class="card-text"><strong>Picture price :</strong> <%=@item.price%> €</p>
 				    <p class="card-text"><strong>Picture description :</strong> <%=@item.description%></p>
+				    <%if current_user%>
 					<h6>Changer d'avatar ?</h6>
 						<%= form_tag item_pictures_path(@item), multipart: true do %>
 						<%= file_field_tag :picture %>
 						<%= submit_tag "mettre à jour", class:"btn btn-success boutton"%>
 						<% end %>
-				    	<a href="#" class="btn btn-success boutton">click here to buy!</a>
+						<%else%>
+				    		<%end%>	
+				 <a href="<%=root_path %>" class="btn btn-success boutton">Back home</a>
+
 				  </div><!-- FIN CARD BODY -->
 				</div>
+
 </div>
 
-
+ 
