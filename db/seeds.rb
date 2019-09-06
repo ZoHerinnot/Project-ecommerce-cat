@@ -11,9 +11,7 @@ ListCommand.destroy_all
 User.destroy_all
 Cart.destroy_all
 
-u = User.create(email:"google@gmail.com", password:"google@gmail.com").id
-u1 = User.create(email:"yahoo@gmail.com", password:"yahoo@gmail.com").id
-tab = [u1,u]
+
 
 20.times do
  Item.create(
@@ -25,22 +23,4 @@ tab = [u1,u]
 
  )
  puts "#{rand(10)}"
-end
-
-
-
-c = Cart.create(user_id: u)
-c1 = Cart.create(user_id: u1)
-
-
-a = Item.first.id
-b = Item.last.id
-
-
-5.times do
-    ListCommand.create( cart:c, item: Item.find(a) )
-    ListCommand.create( cart:c1, item: Item.find(b) )
-    a+=1
-    b-=1
-    puts "#{rand(10)}"
 end
