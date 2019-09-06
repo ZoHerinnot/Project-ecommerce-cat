@@ -23,15 +23,15 @@
 			    	</td>
 			    		<%end%>	
 			      <td><%= list_command.title %></td>
-			      <td><%=list_command.price%> €</td>
+			      <td><%=list_command.price%> $</td>
 			      <td><a href="<%=cart_path(list_command.id)%>" data-method="delete" data-confirm="êtes vous sure ?" data-remote="true" class="badge badge-danger">Enlever du panier</a></td>
 			    </tr>
 				<% end %>
 			  </tbody>
 		</table>
     </div>
-		<div class="footer-basket">
-			<strong>Prix total: <%=@price_total%> €</strong>
+		<div class="footer-basket" >
+			<strong id = "prixDuCart">Prix total: <%=@price_total%> $</strong>
 		</div>
 
 		<%= form_tag new_order_path, method:'get' do%>

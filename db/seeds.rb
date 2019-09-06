@@ -11,16 +11,12 @@ ListCommand.destroy_all
 User.destroy_all
 Cart.destroy_all
 
-u = User.create(email:"google@gmail.com", password:"google@gmail.com")
-u1 = User.create(email:"yahoo@gmail.com", password:"yahoo@gmail.com")
-tab = [u1,u]
 
 20.times do
  Item.create(
       title: Faker::Creature::Cat.name,
       description: Faker::Quote.matz,
       image_url: Faker::Avatar.image(size: "200x200", format: "jpg", set: "set4", bgset: "bg1"),
-      user_id : tab = [rand(2)],
       price: rand(5...15)
 
  )
