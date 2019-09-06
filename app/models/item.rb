@@ -2,7 +2,6 @@ class Item < ApplicationRecord
     has_many :list_commands
     has_many :carts, through: :list_commands
     has_one_attached :picture
-    belongs_to :user
     has_many :join_table_order_items
 		has_many :orders, through: :join_table_order_items
     

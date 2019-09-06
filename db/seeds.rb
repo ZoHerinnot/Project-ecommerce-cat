@@ -13,7 +13,6 @@ Cart.destroy_all
 
 u = User.create(email:"google@gmail.com", password:"google@gmail.com").id
 u1 = User.create(email:"yahoo@gmail.com", password:"yahoo@gmail.com").id
-tab = [u1,u]
 
 20.times do
  Item.create(
