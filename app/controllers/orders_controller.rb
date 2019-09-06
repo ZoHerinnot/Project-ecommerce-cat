@@ -9,8 +9,8 @@ class OrdersController < ApplicationController
 	
 	# Amount in cents
 	@payed = params[:price]
-	
-	@amount = 500
+
+	@amount = "500"
 
 	
 	customer = Stripe::Customer.create({
@@ -27,6 +27,10 @@ class OrdersController < ApplicationController
 	 
      rescue Stripe::CardError => e
 		flash[:error] = e.message
+
+		current_user.cart.destroy
+    Cart.create(user_id: current_user.id) 
+
 		redirect_to new_charge_path
 
   end
@@ -43,13 +47,10 @@ class OrdersController < ApplicationController
   def create_order
   	@order = Order.create(user_id: current_user.id)
   	@items = current_user.cart.items
-
   	@items.each do |item|
   		JoinTableOrderItem.create(item_id:item.id, order_id:@order.id)
   	end
-
   	@cart = current_user.cart.destroy
-
     Cart.create(user_id: current_user.id) #crée une panier vide a nouveau
   end
 

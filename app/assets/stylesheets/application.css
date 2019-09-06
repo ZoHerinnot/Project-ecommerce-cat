@@ -15,8 +15,8 @@
  */
 
 .container-heigth{
-	min-height: 610px;
-  margin-top: 70px;
+	min-height: 620px;
+  margin-top: 60px;
 }
 
 .display_basket{
@@ -81,8 +81,8 @@ color: #aaa;
 ====================================================================================*/
 
 .container-show{
-	 border: 0 solid;
-	 border-radius: 10px;
+	border: 0 solid;
+	border-radius: 10px;
 }
 .container-show h1{
 	text-align: center;
@@ -94,3 +94,9 @@ color: #aaa;
 	margin: 0 auto;
 	}
 
+/*=================================================================================
+										SHOW INDEX
+====================================================================================*/
+.navbar-color{
+	background: transparent;
+}

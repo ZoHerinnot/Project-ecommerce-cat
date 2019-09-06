@@ -1,39 +1,57 @@
-<!-- <h1> Mon profil </h1>
-<ul>
-	<li>first_name : <%= @user.first_name%></li>
-	<li>last_name : <%= @user.last_name%></li>
-	<li>email : <%= @user.email%></li>
-</ul> -->
+<div class="container-user">
+    <div class="card display_user" id="user" style="width: 20rem;">
+      <div class="card" style="width: 100%;">
+      <h1>Page Profil</h1>
+        <%if @user.avatar.attached?%>
+          <%= image_tag @user.avatar, alt: 'avatar', class: 'avatar_pic' %>
+        <%else%>
+          <%= image_tag ("profilVide.jpeg")%>
+        <%end%>
+    </div>
 
-<body  style="text-align: center;">
-	<div class="card" style="width: 20rem;">
-  <div class="card" style="width: 100%;">
-  <h1>Page Profil</h1>
-<%if @user.avatar.attached?%>
-  <%= image_tag @user.avatar, alt: 'avatar' %>
-<%else%>
-  <%= image_tag ("profilVide.jpeg")%>
-<%end%>
+      <div class="card-body">
+        <h5 class="card-title"><%=current_user.first_name%> <%=current_user.last_name%></h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="card-text"><%=current_user.email%> </li>
+      </ul>
+      <div class="card-body">
+      	<h6>Changer de profil ?</h6>
+    						<%= form_tag user_avatars_path(@user), multipart: true do %>
+    						<%= file_field_tag :avatar %>
+    						<%= submit_tag "valider"%>
+    						<% end %><br>
+        <a href="/users/<%=@user.id%>/edit" class="btn btn-success boutton">Edit votre profil</a><br><br>
+        <a href="/users/edit" class="btn btn-success boutton">Modifier votre mot de passe</a><br><br>
+        <a href="/events" class="btn btn btn-primary">Back to home</a><br>
+      </div>
+    </div>
 
+    <div class="story display_user">
+      <h2>Historiques des commandes</h2>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Pic</th>
+          <th scope="col">Title</th>
+          <th scope="col">price</th>
+          <th scope="col" class="remove">Remove</th>
+        </tr>
+      </thead>
+        <tbody>
+           <%@items.each do |item|%>
+              <tr id="cat<%=item.id%>">
+                <%if item.picture.attached?%>
+                <td><a href="#"><%= image_tag item.picture, alt: 'picture', class: 'pic' %></a></td>
+              <%else%>
+                <td><a href="#"><%= image_tag item.image_url, alt: 'picture', class: 'pic' %></a></td> 
+              <%end%>        
+                 <td><%=item.title%></td>
+                <td><%=item.price%> $</td>
+                <td><a href="/items/<%= item.id %>" data-method="DELETE" class="badge badge-danger" data-remote="true">enlever de l'historique</a></td>
+              </tr>
+           <%end%>
+        </tbody>
+      </table>
+    </div>
 </div>
-
-  <div class="card-body">
-    <h5 class="card-title"><%=current_user.first_name%> <%=current_user.last_name%></h5>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="card-text"><%=current_user.email%> </li>
-  </ul>
-  <div class="card-body">
-  	<h6>Changer de profil ?</h6>
-						<%= form_tag user_avatars_path(@user), multipart: true do%>
-						<%= file_field_tag :avatar %>
-						<%= submit_tag "valider", class:"btn btn-info"%>
-						<% end %><br>
-    <a href="/users/<%=@user.id%>/edit" class="btn btn-success boutton">Edit votre profil</a><br><br>
-    <a href="/users/edit" class="btn btn-success boutton">Modifier votre mot de passe</a><br><br>
-    <a href="/events" class="btn btn btn-primary">Back to home</a><br>
-  </div>
-</div>
-
-</body>
-
