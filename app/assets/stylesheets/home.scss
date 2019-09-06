@@ -3,19 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.marginTop{
-
-}
-
-#center-div{
-  margin: 0 auto;
-  width: 200pw;
-}
-
-.imag_pic{
-  width: 900px;
-  height: 350px;
-}
 body{
 	background: image-url("cat1.jpg");
 	background-repeat: no-repeat;
@@ -24,7 +11,7 @@ body{
 }
 
 .carousel-item {
-  height: 100px;
+  height: 150px;
   min-height: 350px;
   background: no-repeat center center scroll;
   -webkit-background-size: cover;
@@ -33,19 +20,3 @@ body{
   background-size: cover;
 }
 
-.marke {
-	background-color: white;
-	height: 80px;
-}
-
-.navbar-color{
-  background: transparent;
-}
-.color-card{
-  color: white;
-
-}
-.edit-card{
-  opacity: 1.0;
-  border: 1px solid black;
-}
