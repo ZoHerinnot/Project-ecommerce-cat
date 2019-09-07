@@ -3,11 +3,13 @@
     <div class="card display_user" id="user" style="width: 20rem;">
       <div class="card" style="width: 100%;">
       <h1>Page Profil</h1>
+      <p>
         <%if @user.avatar.attached?%>
           <%= image_tag @user.avatar, alt: 'avatar', class: 'avatar_pic' %>
         <%else%>
-          <%= image_tag ("profilVide.jpeg")%>
+          pas de photo
         <%end%>
+        </p>
     </div>
 
       <div class="card-body">
@@ -17,7 +19,7 @@
         <li class="card-text"><%=current_user.email%> </li>
       </ul>
       <div class="card-body">
-      	<h6>Changer de profil ?</h6>
+      	<h6>Ajouter une photo</h6>
     						<%= form_tag user_avatars_path(@user), multipart: true do %>
     						<%= file_field_tag :avatar %>
     						<%= submit_tag "valider"%>
