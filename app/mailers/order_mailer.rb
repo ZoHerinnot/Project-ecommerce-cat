@@ -1,5 +1,5 @@
 class OrderMailer < ApplicationMailer
-	default from: 'https://robocat-little.herokuapp.com/'
+	default from: 'https://robocat@gmail.com'
 
 	def notify_email(order)
 		@order = order

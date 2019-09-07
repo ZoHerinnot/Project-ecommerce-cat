@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
 		current_user.cart.destroy
     Cart.create(user_id: current_user.id) 
 
-		redirect_to cart_path(current_user.id)
+		redirect_to user_path(current_user.id)
 
   end
 
@@ -45,11 +45,11 @@ class OrdersController < ApplicationController
   
 
   def create_order
-  	@order = Order.create(user_id: current_user.id)
-  	@items = current_user.cart.items
-  	@items.each do |item|
-  		JoinTableOrderItem.create(item_id:item.id, order_id:@order.id)
-  	end
+  	# @order = Order.create(user_id: current_user.id)
+  	# @items = current_user.cart.items
+  	# @items.each do |item|
+  	# 	JoinTableOrderItem.create(item_id:item.id, order_id:@order.id)
+  	# end
   	@cart = current_user.cart.destroy
     Cart.create(user_id: current_user.id) #crée une panier vide a nouveau
   end
