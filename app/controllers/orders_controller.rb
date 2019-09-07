@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
 		current_user.cart.destroy
     Cart.create(user_id: current_user.id) 
 
-		redirect_to new_charge_path
+		redirect_to cart_path(current_user.id)
 
   end
 
