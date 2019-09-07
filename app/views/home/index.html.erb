@@ -61,7 +61,7 @@
 											<div class="card-body color-card" >
 												<h4 class="card-title">
 													<a href="<%=item_path(item.id)%>"><%=item.title%></a>
-                          <a href="<%=carts_path(item.id)%>" data-method="create" class="btn btn-primary">Ajouter au panier</a>
+                          <a href="<%=carts_path(item.id)%>" data-method="create" class="btn btn-warning"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a>
 												</h4>
 												<h5><%=item.price%> $</h5>
 												<p class="card-text"><%=item.description[0..20]%> ...</p>
