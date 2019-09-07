@@ -58,7 +58,7 @@
           </button>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <span class="dropdown-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></span>
-          <span class="dropdown-item"><a href="/users/<%=current_user.id%>">Mon profil</a> </span>
+          <span class="dropdown-item"><%= link_to "Mon profil", user_path(current_user.id)%> </span>
 
         <% end %>
       </div>
@@ -83,7 +83,7 @@
 <footer class="page-footer font-small special-color-dark bg-success pt-4">
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
   </div>
   <!-- Copyright -->
 
