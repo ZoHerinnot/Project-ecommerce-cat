@@ -20,8 +20,7 @@
   </head>
 
   <body>
-      <nav class="navbar navbar-expand-lg navbar-dark  fixed-top navbar-color">
-
+      <nav class="navbar navbar-expand-lg navbar-dark back disabled sticky-top">
   <a class="navbar-brand" href="<%=root_path%>">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -29,14 +28,17 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        
-      </li>
+      <li class="nav-item active"></li>
+
+      <li class="nav-item cart">
+      <a href="#" data-toggle="modal" data-target="#cart" class="nav-link">Team</a>
+                </li>
+
      </ul>
 
     <div class="dropdown">
         <% unless user_signed_in? %>
-          <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         S'inscrire/Se connecter
           </button>
          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -59,25 +61,27 @@
           </button>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <span class="dropdown-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></span>
-          <span class="dropdown-item"><a href="/users/<%=current_user.id%>">Mon profil</a> </span>
+          <span class="dropdown-item"><%= link_to "Profil", user_path(current_user.id), method: :get %> </span>
 
         <% end %>
       </div>
     </nav>
 
 
-    
+
+
+    <div class="global-container">
       <%= render '/home/modals.html.erb' %>
+      <%= render '/home/team.html.erb' %>
       <%= yield %>
  
+<footer class="page-footer font-small special-color-dark bg-dark pt-1">
 
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Sell Cat picture 2019</p>
-        
-      </div>
-      <!-- /.container -->
-    </footer>
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+  </div>
+</footer>
+<!-- Footer -->
+
 
   </body>
 </html>

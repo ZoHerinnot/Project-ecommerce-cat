@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :pictures, only: [:create]
   end
 
-  resources :users, only:[:index, :show, :edit, :update]
+  resources :users, only:[:show, :edit, :update]
     resources :users, only: [:show] do
     resources :avatars, only: [:create]
   end
